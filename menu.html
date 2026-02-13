@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bite & Delight - Menu</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-lg navbar-dark custom-nav p-0 m-0 fixed-top">
+      <div class="container">
+        <div class="brand">
+          <div class="logo">
+            <h1>Bite <span class="stylized-and">&</span> Delight</h1>
+          </div>
+        </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+            <li class="nav-item me-2 d-flex align-items-center">
+              <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchMenu()">
+              <i class="fas fa-search nav-icon" onclick="toggleSearch()"></i>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+            </li>
+            <li class="nav-item d-none">
+              <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="deals.html"><i class="fas fa-fire me-1"></i>Deals</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="about.html">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="reviews.html">Reviews</a>
+            </li>
+            <li class="nav-item me-3">
+              <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item me-3">
+              <a href="auth.html" style="text-decoration: none;"><i class="fas fa-user nav-icon"></i></a>
+            </li>
+            <li class="nav-item">
+              <a href="cart.html" class="cart-icon-container" style="text-decoration: none;">
+                <i class="fas fa-shopping-cart nav-icon"></i>
+                <span class="cart-badge">0</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SLIDER WITH DEALS -->
+  <section class="menu-hero-slider">
+    <div class="slider-container">
+
+      <!-- Slide 1: Deal 1 -->
+      <div class="hero-slide active">
+        <div class="slide-overlay"></div>
+        <img src="images/deal 1.jpg" alt="Deal 1" class="slide-image">
+        <div class="slide-content">
+          <a href="deals.html" class="btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 2: Deal 2 -->
+      <div class="hero-slide">
+        <div class="slide-overlay"></div>
+        <img src="images/deal 2.webp" alt="Deal 2" class="slide-image">
+        <div class="slide-content">
+          <a href="deals.html" class="btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Slide 3: Deal 3 -->
+      <div class="hero-slide">
+        <div class="slide-overlay"></div>
+        <img src="images/deal 3.webp" alt="Deal 3" class="slide-image">
+        <div class="slide-content">
+          <a href="deals.html" class="btn">Order Now</a>
+        </div>
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="slider-dots">
+        <span class="dot active" onclick="currentSlide(0)"></span>
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+      </div>
+
+      <!-- Arrow Navigation -->
+      <button class="slider-arrow prev" onclick="changeSlide(-1)">❮</button>
+      <button class="slider-arrow next" onclick="changeSlide(1)">❯</button>
+    </div>
+  </section>
+
+  <section class="section">
+    <!-- Removed "Our Menu" heading as requested -->
+
+    <!-- Category Buttons -->
+    <div class="category-buttons">
+      <button class="active-cat" onclick="filterMenu('All')"><i class="fas fa-border-all me-2"></i>All</button>
+      <button onclick="filterMenu('Deals')"><i class="fas fa-fire me-2"></i>Deals</button>
+      <button onclick="filterMenu('Pizza')"><i class="fas fa-pizza-slice me-2"></i>Pizza</button>
+      <button onclick="filterMenu('Burger')"><i class="fas fa-hamburger me-2"></i>Burger</button>
+      <button onclick="filterMenu('Pasta')"><i class="fas fa-utensils me-2"></i>Pasta</button>
+      <button onclick="filterMenu('Wrap')"><i class="fas fa-bread-slice me-2"></i>Wraps</button>
+      <button onclick="filterMenu('Drinks')"><i class="fas fa-glass-whiskey me-2"></i>Drinks</button>
+      <button onclick="filterMenu('Dessert')"><i class="fas fa-cookie me-2"></i>Desserts</button>
+    </div>
+
+    <!-- Menu Cards -->
+    <div class="products">
+
+      <!-- DEALS (3 items) -->
+      <div class="card fade-card" data-category="Deals">
+        <img src="images/deal 1.jpg" alt="Mega Deal 1">
+        <h3>Mega Deal 1</h3>
+        <p>2 Zinger Burgers + 2 Drinks</p>
+        <span class="price">Rs 999</span>
+        <button class="btn" onclick="addToCart('Mega Deal 1', 999)">Add to Cart</button>
+      </div>
+
+      <div class="card fade-card" data-category="Deals">
+        <img src="images/deal 2.webp" alt="Family Feast Deal">
+        <h3>Family Feast Deal</h3>
+        <p>Large Pizza + 4 Drinks + Garlic Bread</p>
+        <span class="price">Rs 1799</span>
+        <button class="btn" onclick="addToCart('Family Feast Deal', 1799)">Add to Cart</button>
+      </div>
+
+      <div class="card fade-card" data-category="Deals">
+        <img src="images/deal 3.webp" alt="Wrap Combo Special">
+        <h3>Wrap Combo Special</h3>
+        <p>2 Chicken Wraps + 2 Fries + 2 Drinks</p>
+        <span class="price">Rs 1299</span>
+        <button class="btn" onclick="addToCart('Wrap Combo Special', 1299)">Add to Cart</button>
+      </div>
+
+      <!-- Pizza (6 items) -->
+      <div class="card fade-card" data-category="Pizza">''
+        <img src="/images/Margherita Pizza.jpg" alt="">
+        <h3>Margherita Pizza</h3>
+        <p>Cheesy delight</p>
+        <p>Rs 900</p>
+        <button onclick="addToCart('Margherita Pizza',900)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pizza">
+        <img src="/images/chicken pizza.jpg" alt="">
+        <h3>Chicken Pizza</h3>
+        <p>Spicy & cheesy</p>
+        <p>Rs 1200</p>
+        <button onclick="addToCart('Chicken Pizza',1200)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pizza">
+        <img src="/images/bbq.jpg" alt="">
+        <h3>BBQ Pizza</h3>
+        <p>Smoky flavor</p>
+        <p>Rs 1300</p>
+        <button onclick="addToCart('BBQ Pizza',1300)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pizza">
+        <img src="/images/veg.jpg" alt="">
+        <h3>Veggie Supreme</h3>
+        <p>Veg delight</p>
+        <p>Rs 950</p>
+        <button onclick="addToCart('Veggie Supreme',950)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pizza">
+        <img src="images/Pepperoni.jpg" alt="">
+        <h3>Pepperoni Pizza</h3>
+        <p>Classic taste</p>
+        <p>Rs 1250</p>
+        <button onclick="addToCart('Pepperoni Pizza',1250)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pizza">
+        <img src="/images/Hawaiian.jpg" alt="">
+        <h3>Hawaiian Pizza</h3>
+        <p>Pineapple & ham</p>
+        <p>Rs 1150</p>
+        <button onclick="addToCart('Hawaiian Pizza',1150)">Add to Cart</button>
+      </div>
+
+      <!-- Burger (6 items) -->
+      <div class="card fade-card" data-category="Burger">
+        <img src="/images/zinger burger.jpg" alt="">
+        <h3>Zinger Burger</h3>
+        <p>Crispy & spicy</p>
+        <p>Rs 550</p>
+        <button onclick="addToCart('Zinger Burger',550)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Burger">
+        <img src="/images/cheese.jpg" alt="">
+        <h3>Cheese Burger</h3>
+        <p>Melty cheese inside</p>
+        <p>Rs 500</p>
+        <button onclick="addToCart('Cheese Burger',500)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Burger">
+        <img src="/images/chicken burger.jpg" alt="">
+        <h3>Chicken Burger</h3>
+        <p>Juicy chicken</p>
+        <p>Rs 600</p>
+        <button onclick="addToCart('Chicken Burger',600)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Burger">
+        <img src="/images/beef.jpg" alt="">
+        <h3>Beef Burger</h3>
+        <p>Spicy beef patty</p>
+        <p>Rs 650</p>
+        <button onclick="addToCart('Beef Burger',650)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Burger">
+        <img src="/images/double patty.jpg" alt="">
+        <h3>Double Patty Burger</h3>
+        <p>Double the fun</p>
+        <p>Rs 700</p>
+        <button onclick="addToCart('Double Patty Burger',700)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Burger">
+        <img src="/images/veggie delight.jpg" alt="">
+        <h3>Veggie Delight</h3>
+        <p>Fresh vegetables</p>
+        <p>Rs 450</p>
+        <button onclick="addToCart('Veggie Delight',450)">Add to Cart</button>
+      </div>
+
+      <!-- Pasta (6 items) -->
+      <div class="card fade-card" data-category="Pasta">
+        <img src="/images/alfredo.jpg" alt="">
+        <h3>Alfredo Pasta</h3>
+        <p>Creamy & delicious</p>
+        <p>Rs 750</p>
+        <button onclick="addToCart('Alfredo Pasta',750)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pasta">
+        <img src="/images/Spaghetti.jpg" alt="">
+        <h3>Spaghetti Bolognese</h3>
+        <p>Classic Italian</p>
+        <p>Rs 800</p>
+        <button onclick="addToCart('Spaghetti Bolognese',800)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pasta">
+        <img src="/images/pesto.jpg" alt="">
+        <h3>Pesto Pasta</h3>
+        <p>Fresh basil sauce</p>
+        <p>Rs 700</p>
+        <button onclick="addToCart('Pesto Pasta',700)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pasta">
+        <img src="/images/mac&cheese.jpg" alt="">
+        <h3>Mac & Cheese</h3>
+        <p>Creamy comfort</p>
+        <p>Rs 650</p>
+        <button onclick="addToCart('Mac & Cheese',650)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pasta">
+        <img src="/images/veg pasta.jpg" alt="">
+        <h3>Veg Pasta</h3>
+        <p>Healthy & fresh</p>
+        <p>Rs 600</p>
+        <button onclick="addToCart('Veg Pasta',600)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Pasta">
+        <img src="images/chicken pasta.jpg" alt="">
+        <h3>Chicken Pasta</h3>
+        <p>Rich flavor</p>
+        <p>Rs 800</p>
+        <button onclick="addToCart('Chicken Pasta',800)">Add to Cart</button>
+      </div>
+
+      <!-- Wraps (6 items) -->
+      <div class="card fade-card" data-category="Wrap">
+        <img src="/images/chicken wrap.jpg" alt="">
+        <h3>Chicken Wrap</h3>
+        <p>Spicy chicken</p>
+        <p>Rs 500</p>
+        <button onclick="addToCart('Chicken Wrap',500)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Wrap">
+        <img src="/images/veggie wrap.jpg" alt="">
+        <h3>Veggie Wrap</h3>
+        <p>Healthy & fresh</p>
+        <p>Rs 450</p>
+        <button onclick="addToCart('Veggie Wrap',450)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Wrap">
+        <img src="/images/grilled.jpg" alt="">
+        <h3>Grilled Wrap</h3>
+        <p>Grilled perfection</p>
+        <p>Rs 550</p>
+        <button onclick="addToCart('Grilled Wrap',550)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Wrap">
+        <img src="/images/spicy.jpg" alt="">
+        <h3>Spicy Wrap</h3>
+        <p>Extra kick</p>
+        <p>Rs 500</p>
+        <button onclick="addToCart('Spicy Wrap',500)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Wrap">
+        <img src="/images/club.jpg" alt="">
+        <h3>Club Wrap</h3>
+        <p>Loaded wrap</p>
+        <p>Rs 600</p>
+        <button onclick="addToCart('Club Wrap',600)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Wrap">
+        <img src="images/Falafel Wrap.jpg" alt="">
+        <h3>Falafel Wrap</h3>
+        <p>Veg & tasty</p>
+        <p>Rs 450</p>
+        <button onclick="addToCart('Falafel Wrap',450)">Add to Cart</button>
+      </div>
+
+      <!-- Drinks (6 items) -->
+      <div class="card fade-card" data-category="Drinks">
+        <img src="/images/drink.jpg" alt="">
+        <h3>Cold Drink</h3>
+        <p>Refreshing</p>
+        <p>Rs 150</p>
+        <button onclick="addToCart('Cold Drink',150)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Drinks">
+        <img src="/images/fresh juice.jpg" alt="">
+        <h3>Fresh Juice</h3>
+        <p>Vitamin rich</p>
+        <p>Rs 200</p>
+        <button onclick="addToCart('Fresh Juice',200)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Drinks">
+        <img src="/images/smoothie.jpg" alt="">
+        <h3>Smoothie</h3>
+        <p>Fruity & creamy</p>
+        <p>Rs 250</p>
+        <button onclick="addToCart('Smoothie',250)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Drinks">
+        <img src="/images/water.jpg" alt="">
+        <h3>Mineral Water</h3>
+        <p>Pure & fresh</p>
+        <p>Rs 100</p>
+        <button onclick="addToCart('Mineral Water',100)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Drinks">
+        <img src="/images/lemonade.jpg" alt="">
+        <h3>Lemonade</h3>
+        <p>Sweet & tangy</p>
+        <p>Rs 180</p>
+        <button onclick="addToCart('Lemonade',180)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Drinks">
+        <img src="/images/iced tea.jpg" alt="">
+        <h3>Iced Tea</h3>
+        <p>Cool & refreshing</p>
+        <p>Rs 200</p>
+        <button onclick="addToCart('Iced Tea',200)">Add to Cart</button>
+      </div>
+
+      <!-- Desserts (6 items) -->
+      <div class="card fade-card" data-category="Dessert">
+        <img src="/images/Chocolate Lava .jpg" alt="">
+        <h3>Chocolate Lava Cake</h3>
+        <p>Rich & gooey</p>
+        <p>Rs 350</p>
+        <button onclick="addToCart('Chocolate Lava Cake',350)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Dessert">
+        <img src="/images/browmie.jpg" alt="">
+        <h3>Brownie</h3>
+        <p>Chocolate delight</p>
+        <p>Rs 250</p>
+        <button onclick="addToCart('Brownie',250)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Dessert">
+        <img src="/images/fresh-fruity-dessert-wooden-table-generated-by-ai.jpg" alt="">
+        <h3>Ice Cream Sundae</h3>
+        <p>Creamy & sweet</p>
+        <p>Rs 300</p>
+        <button onclick="addToCart('Ice Cream Sundae',300)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Dessert">
+        <img src="/images/closeup-shot-cheesecake-with-jelly-decorated-with-strawberries-berries.jpg" alt="">
+        <h3>Cheesecake</h3>
+        <p>Soft & creamy</p>
+        <p>Rs 400</p>
+        <button onclick="addToCart('Cheesecake',400)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Dessert">
+        <img src="/images/cupcake 1.jpg" alt="">
+        <h3>Mini Cupcakes</h3>
+        <p>Sweet bites</p>
+        <p>Rs 200</p>
+        <button onclick="addToCart('Mini Cupcakes',200)">Add to Cart</button>
+      </div>
+      <div class="card fade-card" data-category="Dessert">
+        <img src="/images/fruit salad.jpg" alt="">
+        <h3>Fruit Salad</h3>
+        <p>Fresh & healthy</p>
+        <p>Rs 220</p>
+        <button onclick="addToCart('Fruit Salad',220)">Add to Cart</button>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-box">
+        <h3>Bite <span class="stylized-and">&</span> Delight</h3>
+        <p>Serving taste with love. We bring the best gourmet experiences to your table with fresh ingredients and
+          signature flavors.</p>
+        <div class="social-icons">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-twitter"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-box">
+        <h4>Quick Links</h4>
+        <a href="index.html">Home</a>
+        <a href="menu.html">Menu</a>
+        <a href="deals.html">Deals</a>
+        <a href="about.html">About</a>
+        <a href="reviews.html">Reviews</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-box">
+        <h4>Opening Hours</h4>
+        <p>Monday - Friday: 12 PM - 12 AM</p>
+        <p>Saturday: 12 PM - 1 AM</p>
+        <p>Sunday: 1 PM - 11 PM</p>
+      </div>
+      <div class="footer-box">
+        <h4>Contact Us</h4>
+        <div class="contact-item">
+          <i class="fas fa-location-dot"></i>
+          <span>Karachi, Pakistan</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-phone"></i>
+          <span>0300-0000000</span>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <span>biteanddelight@email.com</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Bite & Delight. All rights reserved.
+    </div>
+  </footer>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>

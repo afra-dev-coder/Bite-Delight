@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Special Deals - Bite & Delight</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER / NAVBAR -->
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark custom-nav p-0 m-0 fixed-top">
+            <div class="container">
+                <div class="brand">
+                    <div class="logo">
+                        <h1>Bite <span class="stylized-and">&</span> Delight</h1>
+                    </div>
+                </div>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-center">
+                        <li class="nav-item me-2 d-flex align-items-center">
+                            <input type="text" id="searchInput" placeholder="Search..." onkeyup="searchMenu()">
+                            <i class="fas fa-search nav-icon" onclick="toggleSearch()"></i>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="menu.html">Menu</a>
+                        </li>
+                        <li class="nav-item d-none">
+                            <a class="nav-link active" aria-current="page" href="deals.html"><i
+                                    class="fas fa-fire me-1"></i>Deals</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="about.html">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="reviews.html">Reviews</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a class="nav-link active" aria-current="page" href="contact.html">Contact</a>
+                        </li>
+                        <li class="nav-item me-3">
+                            <a href="auth.html" style="text-decoration: none;"><i class="fas fa-user nav-icon"></i></a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="cart.html" class="cart-icon-container" style="text-decoration: none;">
+                                <i class="fas fa-shopping-cart nav-icon"></i>
+                                <span class="cart-badge">0</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- DEALS HERO SECTION -->
+    <section class="deals-hero">
+        <h1> Special Deals & Offers</h1>
+        <p>Grab our amazing combo deals and save big!</p>
+    </section>
+
+    <!-- DEALS SECTION -->
+    <section class="deals-page">
+        <div class="deals-container">
+
+            <!-- Deal 1 -->
+            <div class="deal-card">
+                <div class="deal-image-container">
+                    <img src="images/deal 1.jpg" alt="Mega Deal 1">
+                    <div class="deal-badge">HOT DEAL</div>
+                </div>
+                <div class="deal-info">
+                    <h3> Mega Deal 1</h3>
+                    <p class="deal-description">Get 2 delicious Zinger Burgers with crispy chicken and fresh veggies,
+                        plus 2 Regular Drinks to wash it all down!</p>
+                    <ul class="deal-includes">
+                        <li><i class="fas fa-check"></i> 2 Zinger Burgers</li>
+                        <li><i class="fas fa-check"></i> 2 Regular Drinks</li>
+                    </ul>
+                    <div class="deal-pricing">
+                        <span class="original-price">Rs 1200</span>
+                        <span class="deal-price">Rs 999</span>
+                    </div>
+                    <button class="btn" onclick="addToCart('Mega Deal 1', 999)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Deal 2 -->
+            <div class="deal-card">
+                <div class="deal-image-container">
+                    <img src="images/deal 2.webp" alt="Family Feast Deal">
+                    <div class="deal-badge">FAMILY SPECIAL</div>
+                </div>
+                <div class="deal-info">
+                    <h3>🍕 Family Feast Deal</h3>
+                    <p class="deal-description">Perfect for family gatherings! Enjoy a Large Pizza with your favorite
+                        toppings, 4 refreshing drinks, and crispy Garlic Bread.</p>
+                    <ul class="deal-includes">
+                        <li><i class="fas fa-check"></i> 1 Large Pizza (Any Flavor)</li>
+                        <li><i class="fas fa-check"></i> 4 Regular Drinks</li>
+                        <li><i class="fas fa-check"></i> Garlic Bread</li>
+                    </ul>
+                    <div class="deal-pricing">
+                        <span class="original-price">Rs 2200</span>
+                        <span class="deal-price">Rs 1799</span>
+                    </div>
+                    <button class="btn" onclick="addToCart('Family Feast Deal', 1799)">Add to Cart</button>
+                </div>
+            </div>
+
+            <!-- Deal 3 -->
+            <div class="deal-card">
+                <div class="deal-image-container">
+                    <img src="images/deal 3.webp" alt="Wrap Combo Special">
+                    <div class="deal-badge">COMBO DEAL</div>
+                </div>
+                <div class="deal-info">
+                    <h3>🌯 Wrap Combo Special</h3>
+                    <p class="deal-description">Craving wraps? Get 2 juicy Chicken Wraps loaded with fresh ingredients,
+                        2 portions of crispy Fries, and 2 refreshing Drinks!</p>
+                    <ul class="deal-includes">
+                        <li><i class="fas fa-check"></i> 2 Chicken Wraps</li>
+                        <li><i class="fas fa-check"></i> 2 Regular Fries</li>
+                        <li><i class="fas fa-check"></i> 2 Regular Drinks</li>
+                    </ul>
+                    <div class="deal-pricing">
+                        <span class="original-price">Rs 1600</span>
+                        <span class="deal-price">Rs 1299</span>
+                    </div>
+                    <button class="btn" onclick="addToCart('Wrap Combo Special', 1299)">Add to Cart</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <h3>Bite <span class="stylized-and">&</span> Delight</h3>
+                <p>Serving taste with love. We bring the best gourmet experiences to your table with fresh ingredients
+                    and
+                    signature flavors.</p>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-box">
+                <h4>Quick Links</h4>
+                <a href="index.html">Home</a>
+                <a href="menu.html">Menu</a>
+                <a href="deals.html">Deals</a>
+                <a href="about.html">About</a>
+                <a href="reviews.html">Reviews</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-box">
+                <h4>Opening Hours</h4>
+                <p>Monday - Friday: 12 PM - 12 AM</p>
+                <p>Saturday: 12 PM - 1 AM</p>
+                <p>Sunday: 1 PM - 11 PM</p>
+            </div>
+            <div class="footer-box">
+                <h4>Contact Us</h4>
+                <div class="contact-item">
+                    <i class="fas fa-location-dot"></i>
+                    <span>Karachi, Pakistan</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-phone"></i>
+                    <span>0300-0000000</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>biteanddelight@email.com</span>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2026 Bite & Delight. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.min.js"
+        integrity="sha384-G/EV+4j2dNv+tEPo3++6LCgdCROaejBqfUeNjuKAiuXbjrxilcCdDz6ZAVfHWe1Y"
+        crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

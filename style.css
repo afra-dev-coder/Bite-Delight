@@ -11,11 +11,8 @@
 /* ===== COLORS ===== */
 :root {
   --primary-color: #1C1C1C;
-  /* Deep Black */
   --secondary-color: #E63946;
-  /* Cherry Red */
   --accent-color: #F5F5F5;
-  /* Soft Cream */
   --text-color: #FFFFFF;
   --btn-color: var(--secondary-color);
   --btn-hover: #4d161a;
@@ -45,20 +42,17 @@ header {
   font-family: 'Poppins', sans-serif;
   font-weight: 700;
   font-size: 32px;
-  color: #b11226 !important;
-  /* Permanent Brand Red */
+  color: #b11226;
   letter-spacing: 1px;
   margin: 0;
   transition: none;
   text-shadow: 2px 2px 4px rgba(177, 18, 38, 0.3);
   user-select: none;
-  /* No selection line */
   cursor: default;
 }
 
 .navbar .logo h1:hover {
-  color: #b11226 !important;
-  /* No color change */
+  color: #b11226;
 }
 
 .stylized-and {
@@ -111,25 +105,18 @@ header nav a:hover {
 
 .hero {
   display: flex;
-  /* Flex enables centering */
   flex-direction: column;
-  /* Stack heading, paragraph, button vertically */
   justify-content: center;
-  /* Vertical center */
   align-items: center;
-  /* Horizontal center */
   text-align: center;
   height: 97vh;
-  /* Full viewport height */
   background-image: url(images/hero.jpg);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
   color: #fff;
-  /* White text for visibility on image */
   padding: 0 20px;
-  /* Remove top/bottom padding */
 }
 
 .hero::before {
@@ -137,7 +124,6 @@ header nav a:hover {
   position: absolute;
   inset: 0;
   background: rgba(0, 0, 0, 0.5);
-  /* darken image for text */
   z-index: 0;
 }
 
@@ -146,7 +132,6 @@ header nav a:hover {
 .btn {
   position: relative;
   z-index: 1;
-  /* ensures content is above overlay */
 }
 
 .hero h2 {
@@ -162,14 +147,11 @@ header nav a:hover {
 
 .btn {
   display: inline-block;
-  /* background-color: var(--btn-color); */
   background-color: #621b21;
   color: #fff;
   padding: 10px 28px;
-  /* bigger and classy */
   border: 2px solid #621b21;
   border-radius: 30px;
-  /* round edges */
   font-weight: bold;
   text-decoration: none;
   transition: all 0.4s ease;
@@ -178,7 +160,6 @@ header nav a:hover {
 .btn:hover {
   background-color: var(--btn-hover);
   transform: translateY(-3px);
-  /* subtle lift */
   box-shadow: 0 8px 20px rgba(119, 19, 32, 0.5);
 }
 
@@ -481,7 +462,6 @@ header nav a:hover {
   color: #fff;
   margin-top: 30px;
   text-align: center;
-  /* Centered as requested */
 }
 
 
@@ -547,7 +527,6 @@ header nav a:hover {
 
 /* Individual card */
 .chef-card {
-  /* min-width: 250px; */
   text-align: center;
   background: rgb(195, 184, 162);
   color: #000;
@@ -556,36 +535,29 @@ header nav a:hover {
   box-shadow: 0 5px 18px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
   min-width: 350px;
-  /* uniform card width */
   max-width: 350px;
 }
 
 
 
-/* IMAGE FIX (rectangle, NOT circle) */
+
 .chef-card img {
   width: 100%;
   height: 280px;
   object-fit: cover;
   border-radius: 12px;
-  /* soft rectangle */
   margin-bottom: 12px;
   display: block;
   margin-left: auto;
   margin-right: auto
 }
 
-/* Text */
 .chef-card p {
   font-size: 16px;
-  /* Slightly bigger */
   color: #000;
-  /* Pure black for contrast */
   font-weight: 600;
-  /* More bold */
 }
 
-/* AUTO SLIDE ANIMATION */
 @keyframes chefSlide {
   0% {
     transform: translateX(0);
@@ -610,7 +582,6 @@ header nav a:hover {
   color: #b11226;
 }
 
-/* 3 cards in one row */
 .about-chefs {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -660,9 +631,7 @@ header nav a:hover {
 
 .about-chefs h2 {
   grid-column: 1 / -1;
-  /* heading full width le */
   text-align: center;
-  /* center me aa jaye */
 }
 
 /* ===== RESPONSIVE ===== */
@@ -723,20 +692,25 @@ header nav a:hover {
 }
 
 .contact-form input,
-.contact-form textarea {
+.contact-form textarea
+ {
   width: 100%;
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid #333;
   border-radius: 8px;
-  background: #fff;
-  /* Black background */
-  color: black;
-  /* White text */
+  background: black;
+  color: #fff;
   font-family: inherit;
   outline: none;
   font-size: 15px;
 }
+
+/* .contact-form textarea{
+  background:#fff;
+  color: #000;
+} */
+
 
 .contact-form button {
   background: #b11226;
@@ -851,9 +825,7 @@ header nav a:hover {
   color: #fff;
   font-family: inherit;
   resize: none;
-  /* Disable manual resize */
   height: 150px;
-  /* Fixed professional range */
 }
 
 /* ===== HEAVY PROFESSIONAL FOOTER ===== */
@@ -1044,7 +1016,6 @@ header nav a:hover {
   }
 }
 
-/* Custom Navbar Style */
 .custom-nav {
   background-color: #000 !important;
 }
@@ -1097,9 +1068,7 @@ header nav a:hover {
   margin-right: 15px;
   width: 200px;
   background: #111;
-  /* Black bg */
   color: #fff;
-  /* White text */
   transition: width 0.3s ease-in-out;
 }
 
@@ -1533,7 +1502,6 @@ h4,
   right: 30px;
 }
 
-/* Active Category Button Highlighting */
 .category-buttons button.active-cat {
   background: #b11226;
   color: #fff;
